@@ -1,0 +1,175 @@
+:root {
+    --verde-principal: #2E7D32;
+    --verde-escuro: #1B5E20;
+    --verde-claro: #A5D6A7;
+    --laranja-terra: #E65100;
+    --fundo-claro: #F5F5F5;
+    --texto-escuro: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--fundo-claro);
+    color: var(--texto-escuro);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--verde-principal);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--verde-claro);
+}
+
+/* Home / Hero */
+.hero {
+    background: linear-gradient(rgba(46, 125, 50, 0.7), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p { font-size: 1.2rem; max-width: 600px; margin-bottom: 1.5rem; }
+
+.btn {
+    background-color: var(--laranja-terra);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.btn:hover { background-color: #BF360C; }
+
+.container {
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.secao-titulo {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--verde-principal);
+    font-size: 2rem;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card-conteudo { padding: 1.5rem; }
+.card-conteudo h3 { color: var(--verde-principal); margin-bottom: 0.5rem; }
+
+/* Página Sobre */
+.page-header {
+    background-color: var(--verde-escuro);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+.page-header h2 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+.bloco-sobre {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.sobre-texto { flex: 1; min-width: 300px; }
+.sobre-texto h3 { color: var(--verde-principal); font-size: 1.8rem; margin-bottom: 1rem; }
+.sobre-texto p { margin-bottom: 1rem; font-size: 1.1rem; text-align: justify; }
+
+.sobre-imagem { flex: 1; min-width: 300px; text-align: center; }
+
+/* EFEITO DAS IMAGENS (MOVIMENTO + ZOOM)*/ 
+
+@keyframes flutuar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+.imagem-animada {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    /* Inicia a animação de flutuar */
+    animation: flutuar 4s ease-in-out infinite;
+    /* Transição suave para quando o mouse entrar/sair */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; 
+}
+
+.imagem-animada:hover {
+    animation-play-state: paused; /* Para de flutuar */
+    transform: scale(1.08); /* Aumenta 8% de tamanho */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3); /* Sombra mais profunda */
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mvv-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 5px solid var(--laranja-terra);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.mvv-card h4 { color: var(--laranja-terra); font-size: 1.4rem; margin-bottom: 0.8rem; }
+
+footer {
+    background-color: var(--verde-escuro);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+}
